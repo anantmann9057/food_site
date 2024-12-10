@@ -5,7 +5,7 @@ import axios from 'axios';
 const app = express();
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
-const port = 80;
+const port = 3000;
 
 app.get('/', (req, res) => {
   //'https://dummyjson.com/products?limit=10&skip=10&select=title,price'
@@ -44,4 +44,4 @@ app.get('/post/:id', (req, res) => {
 
 });
 
-app.listen(port, "192.168.31.26", () => console.log(`listening on port ${port}`));
+app.listen(port, () => console.log(`listening on port ${port}`));
