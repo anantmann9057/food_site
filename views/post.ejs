@@ -1,0 +1,62 @@
+<%- include('partials/header.ejs') %>
+    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+        <hr class="w3-clear">
+        <% if(locals.recipes){%>
+            <img src=<%=recipes.image %> alt="Avatar"
+            class="w3-left w3-circle w3-margin-right" style="width:60px">
+            <span class="w3-right w3-opacity">1 min</span>
+            <h4>
+                <%= recipes.name %>
+            </h4><br>
+
+            <p>
+                Difficulty - <%= recipes.difficulty %>
+            </p>
+            <div class="text-container d-flex justify-content-between">
+                <div class="container-fluid d-flex gap-2 w-100 justify-content-start">
+                    <div>
+
+                        <h4>Ingredients</h4>
+                        <ol>
+                            <% for(var j=0;j< recipes.ingredients.length;j++){%>
+                                <li>
+                                    <%= recipes.ingredients[j] %>
+                                </li>
+                                <% }%>
+                                    %>
+                        </ol>
+
+
+                    </div>
+                </div>
+                <div class="container-fluid d-flex gap-2 w-100 justify-content-start">
+                    <div>
+
+                        <h4>Instructions</h4>
+                        <ol>
+                            <% for(var j=0;j< recipes.instructions.length;j++){%>
+                                <li>
+                                    <%= recipes.instructions[j] %>
+                                </li>
+                                <% }%>
+                                    %>
+                        </ol>
+
+
+                    </div>
+                    <small class="opacity-50 text-nowrap">now</small>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>
+                    &nbsp;Like</button>
+                <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>
+                    &nbsp;Comment</button>
+            </div>
+    </div>
+
+
+    <% } %>
+
+
+        </div>

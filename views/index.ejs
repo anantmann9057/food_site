@@ -1,0 +1,77 @@
+<%- include('partials/header.ejs') %>
+    <div class="main container-fluid ">
+        <div class="container banner col-xxl-8 px-4 py-5 d-flex justify-content-center">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class=" col-10 col-sm-8 col-lg-6">
+                    <img src="https://media.istockphoto.com/id/1127929107/vector/welcome-lettering-sign-isolated-vector.jpg?s=612x612&w=0&k=20&c=kH2mqRoV8-1vutUYwGhdpzx-Wt24Gbq7Oz0sKxZcBWU="
+                        class=" d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
+                        loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to my website</h1>
+                    <p class="lead">This page is just for a presentation and might not be updated!</p>
+
+                </div>
+            </div>
+        </div>
+        <% if(locals.recipes){%>
+            <% for(var i=0;i<recipes.recipes.length;i++){ %>
+                <div class="w-100 mt-5" style="background-color: black;">
+                    <h2 class="p-2 m-0 rounded" style="color: white; font-weight: bold;">
+                        <%=recipes.recipes[i].name%>
+                            </h3>
+                </div>
+                <div class="w-100">
+                    <div class=" list-group border">
+                        <a class="nav-link" href="/post/<%=recipes.recipes[i].id%>" method="get" aria-current="true">
+                            <div class="text-center">
+                                <img class="rounded w-100 " src=<%=recipes.recipes[i].image%>
+                                alt="likes">
+
+                            </div>
+                            <div class="text-container d-flex justify-content-between">
+                                <div class="container-fluid d-flex gap-2 w-100 justify-content-start">
+                                    <div>
+
+                                        <h4>Ingredients</h4>
+                                        <ol>
+                                            <% for(var j=0;j< recipes.recipes[i].ingredients.length;j++){%>
+                                                <li>
+                                                    <%= recipes.recipes[i].ingredients[j] %>
+                                                </li>
+                                                <% }%>
+                                                    %>
+                                        </ol>
+
+
+                                    </div>
+                                </div>
+                                <div class="container-fluid d-flex gap-2 w-100 justify-content-start">
+                                    <div>
+
+                                        <h4>Instructions</h4>
+                                        <ol>
+                                            <% for(var j=0;j< recipes.recipes[i].instructions.length;j++){%>
+                                                <li>
+                                                    <%= recipes.recipes[i].instructions[j] %>
+                                                </li>
+                                                <% }%>
+                                                    %>
+                                        </ol>
+
+
+                                    </div>
+                                    <small class="opacity-50 text-nowrap">now</small>
+                                </div>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+
+                <% } %>
+
+                    <% } %>
+                        %>
+    </div>
